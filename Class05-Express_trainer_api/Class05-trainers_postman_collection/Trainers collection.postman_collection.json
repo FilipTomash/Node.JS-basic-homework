@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "0445c00e-559e-444d-9a29-62110f300aba",
+		"name": "Trainers collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26276033"
+	},
+	"item": [
+		{
+			"name": "Get all trainers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get trainers by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/103a8807-112e-4d8a-bf4c-a0ff9fb5f8f7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"103a8807-112e-4d8a-bf4c-a0ff9fb5f8f7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create trainer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"firstName\": \"Kristina\",\r\n    \"lastName\": \"Kristinovska\",\r\n    \"email\": \"Kkristinovska@gmail.com\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update trainer info",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastName\": \"Ne e vekje ivanovski\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/103a8807-112e-4d8a-bf4c-a0ff9fb5f8f7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"103a8807-112e-4d8a-bf4c-a0ff9fb5f8f7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete trainer by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/103a8807-112e-4d8a-bf4c-a0ff9fb5f8f7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"103a8807-112e-4d8a-bf4c-a0ff9fb5f8f7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all trainers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
