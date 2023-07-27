@@ -4,19 +4,35 @@ import { fileURLToPath } from "node:url";
 import { DataService } from "./services/data.service.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const trainersPath = path.join(
-  __dirname,
-  "trainers_data",
-  "trainers-data.json"
-);
+const trainersPath = path.join(__dirname, "data", "trainers.json");
 
 const saveTrainers = async (trainersData) => {
   await DataService.saveJSONFile(trainersPath, trainersData);
 };
 
-export const getAllTrainers = async () => {
-  const trainers = await DataService.readJSONFile(trainersPath);
+export const getAllTrainers = async (filters) => {
+  let trainers = await DataService.readJSONFile(trainersPath);
 
+  if (filters?.isCurrentlyTeaching) {
+    trainers = trainers.filter((trainer) =>
+      filters.isCurrentlyTeaching === "true"
+        ? trainer.isCurrentlyTeaching
+        : !trainer.isCurrentlyTeaching
+    );
+  }
+  if (filters?.sortBy) {
+    if (filters.sortBy === "coursesASC") {
+      trainers = trainers.sort(
+        (trainer1, trainer2) =>
+          trainer1.coursesFinished - trainer2.coursesFinished
+      );
+    } else if (filters?.sortBy === "coursesDESC") {
+      trainers = trainers.sort(
+        (trainer1, trainer2) =>
+          trainer2.coursesFinished - trainer1.coursesFinished
+      );
+    }
+  }
   return trainers;
 };
 

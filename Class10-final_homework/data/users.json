@@ -1,0 +1,9 @@
+[
+  {
+    "firstName": "Filip",
+    "lastName": "Tomashevski",
+    "email": "test@gmail.com",
+    "password": "$2a$08$syQ9yWZz30qlAseDTO0Zxegd.9Zn3X7xXjRDkvGy3KJIdgldN39C6",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTA0NTc4NzEsImV4cCI6MTY5MDQ1OTczMX0.ZU8bjg0qFIBIZIjXzaV__SNYypbDiUyPiNKaqQK7ogs"
+  }
+]

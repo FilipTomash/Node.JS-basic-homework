@@ -1,4 +1,7 @@
 import express from "express";
+import cors from "cors";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   getAllTrainers,
   getTrainerbyId,
@@ -11,21 +14,29 @@ import {
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.port || "0.0.0.0";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const staticFilesPath = path.join(__dirname, "public");
+
 const app = express();
 
 app.use(express.json());
 
+app.use(cors());
+
+app.use("/images", express.static(staticFilesPath));
+
 app.get("/", async (req, res) => {
   try {
-    const allTrainers = await getAllTrainers();
+    // const filters = req.query;
+    const { query: filters } = req;
+    const trainers = await getAllTrainers(filters);
 
-    return res.json(allTrainers);
+    return res.json(trainers);
   } catch (error) {
     console.log(error);
     return res.status(500).send(error.message);
   }
 });
-
 app.get("/:id", async (req, res) => {
   try {
     const { id: trainerId } = req.params;

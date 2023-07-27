@@ -51,5 +51,14 @@
     "isCurrentlyTeaching": false,
     "timeEmployed": "8 years and 8 months",
     "coursesFinished": 1
+  },
+  {
+    "id": "72a5d64d-cc2b-4614-8500-074de680725b",
+    "firstName": "Bruce",
+    "lastName": "Wayne",
+    "email": "Bwayne@outlook.com",
+    "isCurrentlyTeaching": true,
+    "timeEmployed": "4 years",
+    "coursesFinished": 6
   }
 ]
